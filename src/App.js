@@ -3,6 +3,8 @@ import Footer from "./components/header_footer/Footer";
 import Header from "./components/header_footer/Header";
 import Featured from "./components/featured";
 import "./resources/styles.css";
+import VenueNfo from "./components/venueNfo";
+import HighLights from "./components/highlights";
 
 function App() {
   return (
@@ -10,6 +12,12 @@ function App() {
       <Header />
       <>
         <Featured />
+      </>
+      <>
+        <VenueNfo />
+      </>
+      <>
+        <HighLights />
       </>
 
       <div style={{ background: "red", height: "800px" }}></div>
