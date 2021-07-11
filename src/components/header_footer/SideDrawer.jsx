@@ -1,5 +1,6 @@
 import React from "react";
 import { Drawer, List, ListItem } from "@material-ui/core";
+import { scroller } from "react-scroll";
 
 const SideDrawer = (props) => {
   const links = [
@@ -10,9 +11,23 @@ const SideDrawer = (props) => {
     { where: "location", value: "Location" },
   ];
 
+  const scrollToElement = (elem) => {
+    scroller.scrollTo(elem, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -80,
+    });
+    props.onClose(false);
+  };
+
   const renderItem = (item) => {
     return (
-      <ListItem button onClick={() => alert(item.where)} key={item.where}>
+      <ListItem
+        button
+        onClick={() => scrollToElement(item.where)}
+        key={item.where}
+      >
         {item.value}
       </ListItem>
     );
